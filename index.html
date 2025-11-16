@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mini Mall</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="#" class="logo">Mini<span>Mall</span></a>
+      </div>
+
+      <div class="search-area">
+        <input id="searchInput" type="text" placeholder="Cari produk, mis. 'headphone'..." />
+      </div>
+
+      <nav class="header-actions">
+        <button id="cartToggle" class="cart-btn"><i class='bx bx-shopping-bag'></i> <span id="cartCount">0</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-grid">
+    <section class="product-area">
+      <div class="product-toolbar">
+        <p class="result-count">Menampilkan <strong id="productCount">0</strong> produk</p>
+        <div class="sort">
+          <label>Urutkan:</label>
+          <select id="sortSelect">
+            <option value="default">Terkait</option>
+            <option value="price-asc">Harga: Terendah</option>
+            <option value="price-desc">Harga: Tertinggi</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="productGrid" class="product-grid">
+        <!-- product cards akan diisi oleh JS -->
+      </div>
+    </section>
+
+    <aside id="cartPanel" class="cart-panel">
+      <h3>Keranjang</h3>
+      <div id="cartEmpty" class="cart-empty">Keranjang kosong — tambahkan produk.</div>
+
+      <ul id="cartItems" class="cart-items"></ul>
+
+      <div id="cartSummary" class="cart-summary hidden">
+        <div class="summary-row">
+          <span>Subtotal</span><span id="subtotalText">Rp0</span>
+        </div>
+
+        <div class="summary-row">
+          <label for="address">Alamat Pengiriman</label>
+          <textarea id="address" placeholder="Nama, Jalan, Kota, Provinsi, Kode Pos" rows="3"></textarea>
+        </div>
+
+        <div class="summary-row">
+          <label>Metode Pembayaran</label>
+          <div class="payment-options">
+            <label><input type="radio" name="payment" value="cod" checked> COD (Bayar di Tempat)</label>
+            <label><input type="radio" name="payment" value="transfer"> Transfer Bank</label>
+            <label><input type="radio" name="payment" value="ewallet"> E-Wallet</label>
+          </div>
+        </div>
+
+        <div id="paymentInstructions" class="payment-instructions">
+          <!-- instruksi pembayaran muncul di sini -->
+        </div>
+
+        <button id="checkoutBtn" class="btn btn-primary">Checkout</button>
+      </div>
+
+      <div id="orderResult" class="order-result hidden"></div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2025 MiniMall</p>
+      <nav class="footer-links">
+        <a href="#">Tentang</a>
+        <a href="#">Bantuan</a>
+        <a href="#">Kontak</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
